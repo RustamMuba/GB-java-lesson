@@ -39,46 +39,48 @@ public class gb03 {
         printArray1(msg:"5.Array from method", returnArrayFromMethod);
         printArray1(msg:"5.Array from method", returnArray(len:5, initValue: 555));
 
-//
-//        public static void change (int[] array){
-//            for (int i = 0; i < array.length; i++)
-//                if (array[i] == 1) {
-//                    array[i] = 0;
-//                } else {
-//                    array[i] = 1;
-//                }
-//        }
-//
-//
-//        public static void fullin (int[] array){
-//            for (int i = 0; i < array.length; i++)
-//                if (array[i] < 6)
-//                    array[i] *= 2;
-//        }
-//
-//        public static void doubling (int[] array){
-//            for (int i = 0; i < array.length; i++)
-//                if (array[i] < 6)
-//                    array[i] *= 2;
-//        }
-//
-//        public static void crossFill (int[][] arr){
-//            int abc = arr.length - 1;
-//            for (int i = 0; i < arr.length; i++) {
-//                arr[i][i] = 1;
-//                arr[i][abc - i] = 1;
-//            }
-//        }
-//
-//        public static int[] returnArray (int len, int initValue){
-//            int[] tempArray = new int[len];
-//
-//            for (int i = 0; i < tempArray.length; i++) {
-//                tempArray[i] = initValue;
-//            }
-//        }
     }
-}
+        public static void change (int[] array){
+            for (int i = 0; i < array.length; i++)
+                if (array[i] == 1) {
+                    array[i] = 0;
+                } else {
+                    array[i] = 1;
+                }
+        }
+
+
+        public static void fullin (int[] array){
+            for (int i = 0; i < array.length; i++)
+                if (array[i] < 6)
+                    array[i] *= 2;
+        }
+
+        public static void doubling (int[] array){
+            for (int i = 0; i < array.length; i++)
+                if (array[i] < 6)
+                    array[i] *= 2;
+        }
+
+        public static void crossFill (int[][] arr){
+            int abc = arr.length - 1;
+            for (int i = 0; i < arr.length; i++) {
+                arr[i][i] = 1;
+                arr[i][abc - i] = 1;
+            }
+        }
+
+        public static int[] returnArray (int len, int initValue){
+            int[] tempArray = new int[len];
+
+            for (int i = 0; i < tempArray.length; i++) {
+                tempArray[i] = initValue;
+            }
+
+            return tempArray;
+        }
+
+
 
 
 

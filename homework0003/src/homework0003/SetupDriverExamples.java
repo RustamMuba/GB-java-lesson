@@ -1,0 +1,43 @@
+package homework0003;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.openqa.selenium.WindowType.TAB;
+
+public class SetupDriverExamples {
+    public static void main(String[] args) throws InterruptedException {
+        WebDriver driver;
+        WebDriverWait webDriverWait;
+
+        WebDriverManager.chromedriver().setup();
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("user-agent=Googlebot/2.1 (+http://www.google.com/bot.html)");
+        //chromeOptions.addArguments("--headless");
+        WebDriver driver1 = new ChromeDriver(chromeOptions);
+        driver1.get("https://google.com");
+        Thread.sleep(5000);
+
+        //((JavascriptExecutor)driver).executeScript("window.open()");
+        driver1.switchTo().newWindow(TAB);
+        Thread.sleep(3000);
+
+        List<String> tabs = new ArrayList<>(driver1.getWindowHandles());
+        driver1.switchTo().window(tabs.get(1));
+
+
+        driver1.close();
+
+        Thread.sleep(3000);
+
+        driver1.quit();
+    }
+}
